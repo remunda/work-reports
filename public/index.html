@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Přihlášení — Reportování práce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>Reportování práce</h1>
+      <div class="error" id="loginError"></div>
+      <form id="loginForm">
+        <label class="field">
+          <span>Uživatelské jméno</span>
+          <input type="text" id="username" autocomplete="username" required>
+        </label>
+        <label class="field">
+          <span>Heslo</span>
+          <input type="password" id="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit" class="btn full">Přihlásit se</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Restore focus on the username if present for convenience of testing.
+    window.addEventListener('load', () => {
+      document.getElementById('username').focus();
+    });
+  </script>
+</body>
+</html>

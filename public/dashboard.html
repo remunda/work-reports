@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moje přehled — Reportování práce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <span class="brand">📋 Reportování práce</span>
+      <div class="user-info">
+        <span id="userLabel"></span>
+        <button class="btn small" id="logoutBtn">Odhlásit</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <h2>Přidat nový záznam</h2>
+      <div class="error" id="formError"></div>
+      <form id="reportForm" class="form-row">
+        <label class="field">
+          <span>Datum</span>
+          <input type="date" id="date" required>
+        </label>
+        <label class="field hours">
+          <span>Hodiny</span>
+          <input type="number" id="hours" min="0.25" max="24" step="0.25" value="8" required>
+        </label>
+        <label class="field">
+          <span>Popis</span>
+          <input type="text" id="description" placeholder="Co jste dělali?" required>
+        </label>
+        <button type="submit" class="btn">Uložit</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Moje reporty</h2>
+      <div class="table-scroll">
+        <table id="reportsTable">
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Hodiny</th>
+              <th>Popis</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="empty" id="noReports" style="display:none;">Zatím nemáte žádné reporty.</div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

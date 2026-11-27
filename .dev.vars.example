@@ -1,0 +1,3 @@
+# Zkopíruj tento soubor na .dev.vars (pro lokální vývoj s `npx wrangler dev`).
+# SESSION_SECRET se v produkci nastaví jako Worker secret (viz README-cloudflare.md).
+SESSION_SECRET=vymena-produkce-secret-1273812

@@ -4,12 +4,24 @@
   "description": "Aplikace pro reportování práce",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "wrangler deploy",
+    "cf-dev": "wrangler dev",
+    "db:migrate:remote": "wrangler d1 execute work-reports --remote --file=./migrations/schema.sql"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "better-sqlite3": "^11.3.0",
     "cookie-parser": "^1.4.6",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "hono": "^4.13.23"
+  },
+  "devDependencies": {
+    "wrangler": "^4.168.0"
+  },
+  "allowScripts": {
+    "better-sqlite3@11.10.0": true,
+    "esbuild@0.28.2": true,
+    "workerd@1.20261123.1": true
   }
 }

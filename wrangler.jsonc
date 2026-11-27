@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "work-reports",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-27",
+
+  // Statické assety se servírují z public/ přes ASSETS binding.
+  // run_worker_first: false (výchozí) — cesty pod /api/* jdou do Worker,
+  // ostatní assety obslouží Asset Worker přímo.
+  "assets": {
+    "directory": "public",
+    "binding": "ASSETS"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "work-reports",
+      // TODO: Vyplň database_id po vytvoření DB: npx wrangler d1 create work-reports
+      //   → zkopíruj vrácené UUID sem.
+      "database_id": "TODO"
+    }
+  ]
+}
